@@ -1,5 +1,22 @@
 const express=require("express");
 const router=express.Router();
+<<<<<<< HEAD
+ 
+const knowledgebase = require('../controllers/knowledgebase'); 
+
+
+router.get('/showallknowledgebase' ,knowledgebase.showallknowledgebase);
+router.get('/search_knowledgebase_by_author/:id',knowledgebase.search_knowledgebase_by_author_id);
+router.get('/search_knowledgebase_by_title/:title',knowledgebase.search_knowledgebase_by_title);
+router.delete('/delete_knowledgebase_by_guide_id/:id',knowledgebase.delete_knowledgebase_by_guide_id);
+router.delete('/delete_knowledgebase_by_author_id/:id',knowledgebase.delete_knowledgebase_by_author_id);
+
+
+router.post('/add_knowledgebase' ,knowledgebase.add_knowledgebase);
+
+
+router.put('/update_knowledgebase_by_guide_id/:id',knowledgebase.update_knowledgebase_by_guide_id);
+=======
 
 
 const crops = require('../controllers/crops'); 
@@ -22,4 +39,5 @@ router.get('/searchlocalByEmail/:contact_email',localpartners.searchlocalByEmail
 router.get('/searchlocalpartnersByIdpartner/:id',localpartners.searchlocalpartnersByIdpartner);
 
 
+>>>>>>> main
 module.exports=router;
