@@ -1,6 +1,5 @@
 const express=require("express");
 const router=express.Router();
-<<<<<<< HEAD
  
 const knowledgebase = require('../controllers/knowledgebase'); 
 
@@ -16,7 +15,6 @@ router.post('/add_knowledgebase' ,knowledgebase.add_knowledgebase);
 
 
 router.put('/update_knowledgebase_by_guide_id/:id',knowledgebase.update_knowledgebase_by_guide_id);
-=======
 
 
 const crops = require('../controllers/crops'); 
@@ -38,6 +36,31 @@ router.put('/updatelocalpartners/:id',localpartners.updatelocalpartners);
 router.get('/searchlocalByEmail/:contact_email',localpartners.searchlocalByEmail);
 router.get('/searchlocalpartnersByIdpartner/:id',localpartners.searchlocalpartnersByIdpartner);
 
+const signUp = require('../controllers/signup'); 
+router.post('/signUp',signUp.signUp);
+/////////////////////////////////////////////////
+const login = require('../controllers/login'); 
+router.put('/login',login.login);
+router.post('/logout',login.logout);
 
->>>>>>> main
+
+const resources = require('../controllers/Resources'); 
+router.get('/showallresources',resources.showallresources);
+router.delete('/deleteIDresources/:id',resources.deleteIDresources);
+router.post('/addresources',resources.addresources);
+router.put('/updateresources/:id',resources.updateresources);
+router.get('/searchResourcesByIdResources/:id',resources.searchResourcesByIdResources);
+router.get('/searchAvailableResources',resources.searchAvailableResources);
+router.delete('/deletenotavailableresources',resources.deletenotavailableresources);
+router.put('/buyResourceById/:id',resources.buyResourceById);
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+const volunteer = require('../controllers/volunteer_work'); 
+router.get('/showallvolunteer',volunteer.showallvolunteer);
+router.delete('/deleteIDvolunteer/:id',volunteer.deleteIDvolunteer);
+router.post('/addvolunteer',volunteer.addvolunteer);
+router.get('/searchvolunteerById/:id',volunteer.searchvolunteerById);
+//router.get('/searchByVolunteer_work_name/:name', volunteer.searchByVolunteer_work_name);
+router.put('/updatevolunteer/:id',volunteer.updatevolunteer);
 module.exports=router;
