@@ -15,6 +15,7 @@ const showallcrops = (req,res) => {
     });
 }
 const deleteFromTable = (tableName, key, value) => {
+    
     return new Promise((resolve, reject) => {
         db.query(`DELETE FROM ${tableName} WHERE ${key}=? `, [value], (err, result) => {
             if (err) {
@@ -38,7 +39,9 @@ const deleteFromTable = (tableName, key, value) => {
 // };
 
 const deleteIDcrop = async (req, res) => {
-   
+    // if(req.user.role != "user"){
+        
+    //     return res.json("you are not user")}
     const id = req.params.id; 
 
     try {
