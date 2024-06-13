@@ -35,6 +35,14 @@ router.post('/addlocalpartners',localpartners.addlocalpartners);
 router.put('/updatelocalpartners/:id',localpartners.updatelocalpartners);
 router.get('/searchlocalByEmail/:contact_email',localpartners.searchlocalByEmail);
 router.get('/searchlocalpartnersByIdpartner/:id',localpartners.searchlocalpartnersByIdpartner);
+///////////////////////////////////////////////////
+const signUp = require('../controllers/signup'); 
+router.post('/signUp',signUp.signUp);
+/////////////////////////////////////////////////
+const login = require('../controllers/login'); 
+router.put('/login',login.login);
+router.post('/logout',login.logout);
+
 
 const signUp = require('../controllers/signup'); 
 router.post('/signUp',signUp.signUp);
